@@ -1,8 +1,9 @@
 include(GNUInstallDirs)
 
 set(QTPREFIX "Qt")
+set(QT_NO_PRIVATE_MODULE_WARNING "ON")
 
-find_package(Qt6 COMPONENTS Core Qml Gui Quick QuickControls2 Widgets)
+find_package(Qt6 COMPONENTS CorePrivate Core Qml Gui Quick QuickControls2 Widgets)
 if (NOT Qt6_FOUND)
     set(QTPREFIX "Qt5")
     find_package(Qt5 COMPONENTS Core Qml Gui Quick QuickControls2 Widgets)
